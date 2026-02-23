@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Jenny Danowski",
+  description = "Consejería, coaching y acompañamiento para expats en Alemania.",
+  lang = "es",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/">Jenny Danowski</a>
+
+        <nav class="nav" aria-label="Navegación principal">
+          <a href="/servicios">Servicios</a>
+          <a href="/sobre-mi">Sobre mí</a>
+          <a href="/testimonios">Testimonios</a>
+          <a href="/contacto">Contacto</a>
+        </nav>
+
+        <a class="btn" href="/contacto">Reservar llamada</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© {new Date().getFullYear()} Jenny Danowski</div>
+        <div class="footer-links">
+          <a href="/legal/impressum">Impressum</a>
+          <a href="/legal/privacidad">Privacidad</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
